@@ -60,12 +60,44 @@ namespace TombokSzamokkal
                 Console.WriteLine("Nincs 0 a tömben.");
             }
         }
+
+        static void KeresesTetele()
+        {
+            int keresett = 0;
+            int i = 0;
+            while (i < tomb.Length && tomb[i] != keresett)
+            {
+                i++;
+            }
+            if (i < tomb.Length)
+            {
+                Console.WriteLine($"A keressett szám az {i}. indexen található.");
+            }
+            else
+            {
+                Console.WriteLine("A keresett szám nincs a tömbben");
+            }
+        }
+
+        static void Kivalasztas()
+        {
+            tomb[8] = 10;
+            int i = 0;
+            while (tomb[i] != 10)
+            {
+                i++;
+            }
+            Console.WriteLine($"A keresett szám az {i + 1}. helyen található.");
+        }
+
         static void Main(string[] args)
         {
             Feltolt();
             OsszegzesTetele();
             MegszamlalasTetele();
             EldontesTetele();
+            KeresesTetele();
+            Kivalasztas();
         }
     }
 }

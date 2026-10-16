@@ -1,4 +1,6 @@
-﻿namespace TombokSzamokkal
+﻿using Microsoft.VisualBasic;
+
+namespace TombokSzamokkal
 {
     internal class Program
     {
@@ -18,9 +20,34 @@
             }
             Console.WriteLine();
         }
+
+        static void OsszegzesTetele()
+        {
+            int osszeg = 0;
+            foreach (int item in tomb)
+            {
+                osszeg += item;
+            }
+            Console.WriteLine($"Összeg: {osszeg}");
+        }
+
+        static void MegszamlalasTetele()
+        {
+            int db = 0;
+            foreach (int item in tomb)
+            {
+                if (item < 0)
+                {
+                    db++;
+                }
+                Console.WriteLine($"Negatív számok: {db}");
+            }
+        }
         static void Main(string[] args)
         {
             Feltolt();
+            OsszegzesTetele();
+            MegszamlalasTetele();
         }
     }
 }

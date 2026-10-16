@@ -43,11 +43,29 @@ namespace TombokSzamokkal
                 Console.WriteLine($"Negatív számok: {db}");
             }
         }
+
+        static void EldontesTetele()
+        {
+            int i = 0;
+            while ( i < tomb.Length && tomb[i] != 0)
+            {
+                i++;
+            }
+            if (i < tomb.Length)
+            {
+                Console.WriteLine("Van 0 a tömben.");
+            }
+            else
+            {
+                Console.WriteLine("Nincs 0 a tömben.");
+            }
+        }
         static void Main(string[] args)
         {
             Feltolt();
             OsszegzesTetele();
             MegszamlalasTetele();
+            EldontesTetele();
         }
     }
 }
